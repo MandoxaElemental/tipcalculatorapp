@@ -8,15 +8,28 @@ export const Calculator = () => {
   const [error, setError] = useState("");
   const [tipsTotal, setTips] = useState();
   const [total, setTotal] = useState();
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [active, setActive] = useState();
 
   const arr = [5, 10, 15, 25, 50]
 
+  const disableCheck = () => {
+    if(bill === '' && people === ''){
+      setIsButtonDisabled(true);
+      console.log(isButtonDisabled)
+    } else {
+      setIsButtonDisabled(false);
+      console.log(isButtonDisabled)
+    }
+  };
+
   useEffect(() => {
-    Percentage()
+    disableCheck()
+    console.log(bill)
   }, [bill])
 
   useEffect(() => {
+    disableCheck()
     errorMessage()
     Percentage()
   }, [people])
@@ -42,13 +55,18 @@ export const Calculator = () => {
     }
   }
 
-function handlePercent(n){
+function handlePercent(n, i){
   setTip(n)
+  setActive(i)
+  // () => bool ? true : false;
   Percentage()
 }
 
+function buttonStatus(){
+
+}
+
   function Reset(){
-    setError('')
     setTip(100)
     setTips("0.00");
     setTotal("0.00");
@@ -68,6 +86,7 @@ function handlePercent(n){
     setBill('')
     setCustom('')
     setPeople('')
+    setError('')
   }
 
   useEffect(() => {
@@ -75,6 +94,7 @@ function handlePercent(n){
     setTip(100)
     setTips("0.00");
     setTotal("0.00");
+    disableCheck()
 }, [])
 
 
@@ -89,7 +109,7 @@ function handlePercent(n){
             <p className='text-[#5E7A7D] font-bold pb-3'>Bill</p>
             <div>
               <img className='absolute p-3' src="/public/assets/icon-dollar.svg" alt="dollar" />
-            <input onChange={ (event) => setBill(event.target.value)} className='w-[100%] border-none rounded-md bg-[#F4FAFA] text-right text-[#00494D] text-xl font-bold' type="number" placeholder='0'/>
+            <input value={bill} onChange={ (event) => setBill(event.target.value)} className='w-[100%] border-none rounded-md bg-[#F4FAFA] text-right text-[#00494D] text-xl font-bold' type="number" placeholder='0'/>
             </div>
           </div>
           <div>
@@ -97,10 +117,10 @@ function handlePercent(n){
             <div className='grid auto-rows-max grid-cols-3 gap-3'>
               {arr.map((perc, i) => {
                 return (
-                  <button key={i} onClick={() => handlePercent(perc)} className='bg-[#00494D] hover:bg-[#C5E4E7] h-[45px] rounded-md text-[#F4FAFA] text-xl font-bold hover:cursor-pointer'>{perc}%</button>
+                  <button key={i} onClick={() => handlePercent(perc, i)} className={`${active === i ? 'bg-[#26C0AB]' : 'bg-[#00494D]'} bg-[#00494D] hover:bg-[rgb(197,228,231)] h-[45px] rounded-md text-[#F4FAFA] text-xl font-bold hover:cursor-pointer`}>{perc}%</button>
                 )
               })}
-                <button className=''><input onChange={ (event) => setCustom(event.target.value)} className='h-[45px] border-none w-[100%] text-center rounded-md bg-[#F4FAFA] text-xl font-bold text-[#00494D]' type="number" placeholder='Custom' /></button>
+                <button className=''><input value={custom} onChange={ (event) => setCustom(event.target.value)} className='h-[45px] border-none w-[100%] text-center rounded-md bg-[#F4FAFA] text-xl font-bold text-[#00494D]' type="number" placeholder='Custom' /></button>
             </div>
           </div>
           <div>
@@ -136,7 +156,7 @@ function handlePercent(n){
             </div>
           </div>
           <div className='flex items-end'>
-            <button type="reset" state onClick={Reset} className='bg-[#26C0AB] hover:bg-[#C5E4E7] h-[45px] w-[100%] rounded-md font-bold text-[#00494D]'> RESET</button>
+          {isButtonDisabled ? <button type="reset" disabled={isButtonDisabled} onClick={Reset} className='bg-[#26C0AB] opacity-25 h-[45px] w-[100%] rounded-md font-bold text-[#00494D] text-xl'> RESET</button> : <button type="reset" disabled={isButtonDisabled} onClick={Reset} className='bg-[#26C0AB] hover:bg-[#C5E4E7] h-[45px] w-[100%] rounded-md font-bold text-[#00494D] text-xl'> RESET</button>}
           </div>
         </div>
       </div>

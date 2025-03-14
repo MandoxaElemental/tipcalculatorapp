@@ -7,7 +7,7 @@ function App() {
   return (
     <> 
     <div className='flex justify-center items-center m-14'>
-      <img className='' src="/public/images/logo.svg" alt="" />
+      <img className='' src="/public/assets/logo.svg" alt="logo" />
     </div>
     <Calculator/>
     </>
