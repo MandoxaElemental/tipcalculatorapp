@@ -67,6 +67,7 @@ function buttonStatus(){
     setTip(100)
     setTips("0.00");
     setTotal("0.00");
+    setActive()
     callAndClear()
   }
 
@@ -100,7 +101,7 @@ function buttonStatus(){
   return (
     <>
     <div className='flex justify-center'>
-      <div className='rounded-3xl bg-white h-auto w-[65%] p-7 grid grid-cols-1 md:grid-cols-2 gap-5'>
+      <div className='rounded-3xl bg-white h-auto w-full sm:w-[65%] p-7 grid grid-cols-1 md:grid-cols-2 gap-5'>
         <div className='grid grid-rows-auto gap-8'>
           <div>
             <p className='text-[#5E7A7D] font-bold pb-3'>Bill</p>
@@ -139,7 +140,7 @@ function buttonStatus(){
                 <p className='text-[#7F9C9F]'>/ person</p>
               </div>
               <div>
-                <p className='text-4xl font-bold text-[#26C0AB]'>${tipsTotal}</p>
+                <p className='text-3xl sm:text-4xl font-bold text-[#26C0AB]'>${tipsTotal}</p>
               </div>
             </div>
             <div className='flex justify-between'>
@@ -148,7 +149,7 @@ function buttonStatus(){
                 <p className='text-[#7F9C9F]'>/ person</p>
               </div>
               <div>
-                <p className='text-4xl font-bold text-[#26C0AB]'>${total}</p>
+                <p className='text-3xl sm:text-4xl font-bold text-[#26C0AB]'>${total}</p>
               </div>
             </div>
           </div>
