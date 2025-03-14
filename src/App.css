@@ -1,0 +1,22 @@
+@font-face {
+  font-family: Space-Mono;
+  src: url(/public/fonts/SpaceMono-Regular.ttf);
+}
+@font-face {
+  font-family: Space-Mono;
+  src: url(/public/fonts/SpaceMono-Bold.ttf);
+  font-weight: 700;
+}
+
+body{
+  background-color: hsl(185, 41%, 84%);
+  font-family: Space-Mono;
+}
+
+input::placeholder{
+  color: hsl(184, 14%, 56%)
+}
+
+.active{
+  background-color:red;
+  }
