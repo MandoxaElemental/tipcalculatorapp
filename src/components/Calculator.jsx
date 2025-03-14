@@ -88,7 +88,7 @@ function handlePercent(n){
           <div>
             <p className='text-[#5E7A7D] font-bold pb-3'>Bill</p>
             <div>
-              <img className='absolute p-3' src="/public/images/icon-dollar.svg" alt="dollar" />
+              <img className='absolute p-3' src="/public/assets/icon-dollar.svg" alt="dollar" />
             <input onChange={ (event) => setBill(event.target.value)} className='w-[100%] border-none rounded-md bg-[#F4FAFA] text-right text-[#00494D] text-xl font-bold' type="number" placeholder='0'/>
             </div>
           </div>
@@ -109,7 +109,7 @@ function handlePercent(n){
             <p className='text-orange-400 font-bold pb-3'>{error}</p>
             </div>
           <div>
-              <img className='absolute p-3' src="/public/images/icon-person.svg" alt="person" />
+              <img className='absolute p-3' src="/public/assets/icon-person.svg" alt="person" />
             <input value={people} onChange={ (event) => setPeople(event.target.value)} className='w-[100%] border-none rounded-md bg-[#F4FAFA] text-right text-[#00494D] text-xl font-bold' type="number" placeholder='0' />
             </div>
           </div>
@@ -136,7 +136,7 @@ function handlePercent(n){
             </div>
           </div>
           <div className='flex items-end'>
-            <button type="reset" disabled={true} onClick={Reset} className='bg-[#26C0AB] hover:bg-[#C5E4E7] h-[45px] w-[100%] rounded-md font-bold text-[#00494D]'> RESET</button>
+            <button type="reset" state onClick={Reset} className='bg-[#26C0AB] hover:bg-[#C5E4E7] h-[45px] w-[100%] rounded-md font-bold text-[#00494D]'> RESET</button>
           </div>
         </div>
       </div>
