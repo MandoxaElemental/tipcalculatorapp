@@ -16,7 +16,6 @@ body{
 input::placeholder{
   color: hsl(184, 14%, 56%)
 }
-
-.active{
-  background-color:red;
-  }
+input:focus{
+  border: 1px solid #26C0AB;
+}

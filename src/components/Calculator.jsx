@@ -16,16 +16,13 @@ export const Calculator = () => {
   const disableCheck = () => {
     if(bill === '' && people === ''){
       setIsButtonDisabled(true);
-      console.log(isButtonDisabled)
     } else {
       setIsButtonDisabled(false);
-      console.log(isButtonDisabled)
     }
   };
 
   useEffect(() => {
     disableCheck()
-    console.log(bill)
   }, [bill])
 
   useEffect(() => {
@@ -108,8 +105,8 @@ function buttonStatus(){
           <div>
             <p className='text-[#5E7A7D] font-bold pb-3'>Bill</p>
             <div>
-              <img className='absolute p-3' src="/public/assets/icon-dollar.svg" alt="dollar" />
-            <input value={bill} onChange={ (event) => setBill(event.target.value)} className='w-[100%] border-none rounded-md bg-[#F4FAFA] text-right text-[#00494D] text-xl font-bold' type="number" placeholder='0'/>
+              <img className='absolute p-3.5' src="/public/assets/icon-dollar.svg" alt="dollar" />
+            <input value={bill} onChange={ (event) => setBill(event.target.value)} className='w-[100%] border-none hover:border-solid hover:border-[#26C0AB] hover:border-2 rounded-md bg-[#F4FAFA] text-right text-[#00494D] text-xl font-bold' type="number" placeholder='0'/>
             </div>
           </div>
           <div>
@@ -120,7 +117,7 @@ function buttonStatus(){
                   <button key={i} onClick={() => handlePercent(perc, i)} className={`${active === i ? 'bg-[#26C0AB]' : 'bg-[#00494D]'} bg-[#00494D] hover:bg-[rgb(197,228,231)] h-[45px] rounded-md text-[#F4FAFA] text-xl font-bold hover:cursor-pointer`}>{perc}%</button>
                 )
               })}
-                <button className=''><input value={custom} onChange={ (event) => setCustom(event.target.value)} className='h-[45px] border-none w-[100%] text-center rounded-md bg-[#F4FAFA] text-xl font-bold text-[#00494D]' type="number" placeholder='Custom' /></button>
+                <button className=''><input value={custom} onChange={ (event) => setCustom(event.target.value)} className='h-[45px] border-none hover:border-solid hover:border-[#26C0AB] hover:border-2 w-[100%] text-center rounded-md bg-[#F4FAFA] text-xl font-bold text-[#00494D]' type="number" placeholder='Custom' /></button>
             </div>
           </div>
           <div>
@@ -129,8 +126,8 @@ function buttonStatus(){
             <p className='text-orange-400 font-bold pb-3'>{error}</p>
             </div>
           <div>
-              <img className='absolute p-3' src="/public/assets/icon-person.svg" alt="person" />
-            <input value={people} onChange={ (event) => setPeople(event.target.value)} className='w-[100%] border-none rounded-md bg-[#F4FAFA] text-right text-[#00494D] text-xl font-bold' type="number" placeholder='0' />
+              <img className='absolute p-3.5' src="/public/assets/icon-person.svg" alt="person" />
+            <input value={people} onChange={ (event) => setPeople(event.target.value)} className={`w-[100%] border-none hover:border-solid ${error === '' ? 'hover:border-[#26C0AB]' : 'hover:border-orange-400'} hover:border-2 rounded-md bg-[#F4FAFA] text-right text-[#00494D] text-xl font-bold`} type="number" placeholder='0' />
             </div>
           </div>
         </div>
