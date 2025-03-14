@@ -21,10 +21,10 @@
 
 
 ### Tip Calculator Challenge - Build_GitHub Repository Link:
-[Tip Calculator Challenge - Build GitHub Repository Link](https://github.com/MandoxaElemental/Advice-Generator-in-React)
+[Tip Calculator Challenge - Build GitHub Repository Link](https://github.com/MandoxaElemental/tipcalculatorapp)
 
 ### Tip Calculator Challenge - Vercel Link:
-[Tip Calculator Challenge - Vercel Link](https://advice-generator-in-react.vercel.app/)
+[Tip Calculator Challenge - Vercel Link](https://tipcalculatorapp-ten.vercel.app/)
 
 This has been Peer Reviewed By: 
 > Comments: 

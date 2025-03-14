@@ -30,8 +30,8 @@ export const Calculator = () => {
 
   useEffect(() => {
     disableCheck()
-    errorMessage()
     Percentage()
+    errorMessage()
   }, [people])
 
   useEffect(() => {
